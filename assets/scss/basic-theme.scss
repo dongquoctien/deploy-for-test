@@ -1,0 +1,109 @@
+@charset "UTF-8";
+// function, mixin 정의
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+@function hexToHSL($hex) {
+  @return hue($hex), saturation($hex), lightness($hex);
+}
+@function hexToH($hex) {
+  @return hue($hex);
+}
+@function hexToS($hex) {
+  @return saturation($hex);
+}
+@function hexToL($hex) {
+  @return lightness($hex);
+}
+@mixin theme-color-ffc72c {
+  --primary: #ef7f29;
+}
+@mixin theme-color-96ddf2 {
+  --primary: #96ddf2;
+}
+@mixin theme-color($color) {
+  --primary-rgb: #{hexToRGB($color)};
+  --hue: #{hexToH($color)};
+  --saturation: #{hexToS($color)};
+  --light: #{hexToL($color)};
+}
+@mixin theme-light {
+  --theme-color1: #e0e0e0;
+  --theme-color1-rgb: #{hexToRGB(#e0e0e0)};
+  --theme-color2: #fff;
+  --theme-color2-rgb: #{hexToRGB(#fff)};
+  --theme-color3: #f2f2f2;
+  --theme-color3-rgb: #{hexToRGB(#f2f2f2)};
+  --theme-color4: #333;
+  --theme-color4-rgb: #{hexToRGB(#333)};
+  --theme-color5: #ccc;
+  --theme-color5-rgb: #{hexToRGB(#ccc)};
+  --theme-color6: #868e96;
+  --theme-color6-rgb: #{hexToRGB(#868e96)};
+  --theme-color7: #999;
+  --theme-color7-rgb: #{hexToRGB(#999)};
+  --theme-color8: #666;
+  --theme-color8-rgb: #{hexToRGB(#666)};
+  --theme-color9: #f2f2f2;
+  --theme-color9-rgb: #{hexToRGB(#f2f2f2)};
+  --theme-color10: #888;
+  --theme-color10-rgb: #{hexToRGB(#888)};
+  --theme-color11: #000;
+  --theme-color11-rgb: #{hexToRGB(#000)};
+}
+@mixin theme-dark {
+  --theme-color1: #000;
+  --theme-color1-rgb: #{hexToRGB(#000)};
+  --theme-color2: #333;
+  --theme-color2-rgb: #{hexToRGB(#333)};
+  --theme-color3: #373737;
+  --theme-color3-rgb: #{hexToRGB(#373737)};
+  --theme-color4: #666;
+  --theme-color4-rgb: #{hexToRGB(#666)};
+  --theme-color5: #888;
+  --theme-color5-rgb: #{hexToRGB(#888)};
+  --theme-color6: #868e96;
+  --theme-color6-rgb: #{hexToRGB(#868e96)};
+  --theme-color7: #999;
+  --theme-color7-rgb: #{hexToRGB(#999)};
+  --theme-color8: #ccc;
+  --theme-color8-rgb: #{hexToRGB(#ccc)};
+  --theme-color9: #e0e0e0;
+  --theme-color9-rgb: #{hexToRGB(#e0e0e0)};
+  --theme-color10: #f2f2f2;
+  --theme-color10-rgb: #{hexToRGB(#f2f2f2)};
+  --theme-color11: #fff;
+  --theme-color11-rgb: #{hexToRGB(#fff)};
+}
+// root color setting
+:root {
+  @include theme-color-96ddf2;
+  @include theme-color(#96ddf2);
+  @include theme-dark;
+  --primary-darken: hsl(var(--hue), var(--saturation), calc(var(--light) - 10%));
+  --primary-lighten: hsl(var(--hue), var(--saturation), calc(var(--light) + 10%));
+  --body-scroll-bg: rgba(var(--primary-rgb), 0.3);
+  --body-scroll-bg-thumb: var(--primary);
+}
+// theme color setting
+// primary color, theme color, theme mode
+html[data-theme='base'] {
+  @include theme-color-ffc72c;
+  @include theme-color(#ef7f29);
+  @include theme-dark;
+}
+html[data-theme='basic'] {
+  @include theme-color-ffc72c;
+  @include theme-color(#ef7f29);
+  @include theme-light;
+}
+html[data-theme='sky'] {
+  @include theme-color-96ddf2;
+  @include theme-color(#96ddf2);
+  @include theme-light;
+}
+html[data-theme='sky-black'] {
+  @include theme-color-96ddf2;
+  @include theme-color(#96ddf2);
+  @include theme-dark;
+}

@@ -1,0 +1,196 @@
+@charset "UTF-8";
+// base theme color setting
+$--dark: #000;
+$--light: #fff;
+$--light-gray: #e0e0e0;
+$--purple: #886ab5;
+$--dark-color1: #333;
+$--dark-color2: #666;
+$--dark-color3: #888;
+$--dark-color4: #999;
+$--dark-bg: #373737;
+$--light-color1: #ccc;
+$--light-color2: #f2f2f2;
+$--primary: #96ddf2;
+$--secondary: #868e96;
+$--success: #1dc9b7;
+$--info: #886ab5;
+$--warning: #fd3995;
+$--danger: #ff682c;
+$--blue: #0080ff;
+$--red: #ff0000;
+$--yellow: #fcb13b;
+// form color setting
+$--form-text: #000;
+$--form-text-sub: #666;
+$--form-text-sub2: #888;
+$--form-placeholder: #ccc;
+$--form-border: #e0e0e0;
+$--form-border2: #888;
+$--form-bg: #fff;
+$--form-bg-sub: #ccc;
+$--form-disabled-text: #333;
+$--form-disabled-bg: #f2f2f2;
+$--form-valid: #ff682c;
+$--form-header-bg: #f2f2f2;
+$--form-table-odd-bg: #fcfcfc;
+$--form-table-even-bg: #fcfcfc;
+$--form-table-hover-bg: #f5fcff;
+$--form-scroll-bg: rgba(#999, 0.3);
+$--form-scroll-bg-thumb: #999;
+$--pagination-text: #888;
+$--pagination-text-sub: #fff;
+$--modal-title-bg: #444;
+$--pagination-bg: #f5f5f5;
+$--button-default-text: #000;
+$--button-default-text-sub: #fff;
+$--button-default-border: #e0e0e0;
+// form font size setting
+$--form-font-size-xxs: 10px;
+$--form-font-size-xs: 12px;
+$--form-font-size-sm: 13px;
+$--form-font-size-base: 14px;
+$--form-font-size-lg: 16px;
+// common setting
+$--common-body-minwidth: 1480px;
+$--common-radius: 3px;
+$--common-body-bg: #ffffff;
+$--common-contents-bg: #faf8fb;
+// scroll color setting
+$--body-scroll-bg: rgba($--primary, 0.3);
+$--body-scroll-bg-thumb: $--primary;
+// image url setting
+$--input-valid-icon: 'ico-valid-error.png';
+$--input-delete-icon: 'ico-delete.png';
+$--select-arrow-icon: 'ico-selectbox-arrow.png';
+$--form-checked-icon: 'ico-form-checked.png';
+$--form-checked-disabled-icon: 'ico-form-checked-disabled.png';
+$--form-calendar-icon: 'ico-calendar.png';
+$--nodata-icon: 'ico-nodata.png';
+$--file-icon: 'ico-file.png';
+$--arrow-left-icon: 'ico-arrow-left.png';
+$--arrow-right-icon: 'ico-arrow-right.png';
+$--count-up-icon: 'ico-counter-up.png';
+$--count-down-icon: 'ico-counter-down.png';
+$--accordion-icon: 'ico-accordion-default.png';
+$--accordion-icon-active: 'ico-accordion-active.png';
+$--common-page-prev-icon: 'ico-page-prev.png';
+$--common-page-next-icon: 'ico-page-next.png';
+$--common-page-extend-icon: 'ico-windows-extend.png';
+$--common-page-reduce-icon: 'ico-windows-reduce.png';
+$--common-calendar-prev-icon: 'ico-calendar-prev.png';
+$--common-calendar-next-icon: 'ico-calendar-next.png';
+$--common-header-logo: 'header-logo.png';
+$--common-header-logo-white: 'header-logo-white.png';
+$--common-header-logo-mini: 'header-logo-mini.png';
+$--common-nav-menu-close: 'ico-nav-close.png';
+$--common-nav-menu-open: 'ico-nav-open.png';
+$--common-header-menu-type1: 'ico-menu-type1.png';
+$--common-header-menu-type2: 'ico-menu-type2.png';
+$--common-header-menu-type3: 'ico-menu-type3.png';
+$--common-header-setting-icon: 'ico-setting.png';
+$--common-header-alarm-icon: 'ico-alarm.png';
+$--common-modal-close: 'ico-modal-close.png';
+$--common-modal-close2: 'ico-modal-close2.png';
+$--common-nav-search-icon: 'ico-nav-search.png';
+$--common-form-search-icon: 'ico-form-search.png';
+$--common-tabs-close-icon: 'ico-tabs-close.png';
+$--common-tabs-prev-icon: 'ico-tabs-prev.png';
+$--common-tabs-next-icon: 'ico-tabs-next.png';
+$--common-add-item: 'ico-add-item.png';
+$--common-grid-setting-icon: 'ico-grid-setting.png';
+$--common-grid-interest-icon: 'ico-grid-interest.png';
+$--common-nav-category-flight: 'ico-category-flight-default.png';
+$--common-nav-category-hotel: 'ico-category-hotel-default.png';
+$--common-nav-category-rentalcar: 'ico-category-rentalcar-default.png';
+$--common-nav-category-activity: 'ico-category-activity-default.png';
+$--common-nav-category-flight-active: 'ico-category-flight-active.png';
+$--common-nav-category-hotel-active: 'ico-category-hotel-active.png';
+$--common-nav-category-rentalcar-active: 'ico-category-rentalcar-active.png';
+$--common-nav-category-activity-active: 'ico-category-activity-active.png';
+$--common-searchbox-extend-default: 'ico-searchbox-default.png';
+$--common-searchbox-extend-active: 'ico-searchbox-active.png';
+$--text-label-type1: 'ico-text-label-type1.png';
+$--text-label-type2: 'ico-text-label-type2.png';
+$--text-label-type3: 'ico-text-label-type3.png';
+$--text-label-type4: 'ico-text-label-type4.png';
+$--text-label-type5: 'ico-text-label-type5.png';
+$--cti-icon-type1: 'ico-cti-type1-default.png';
+$--cti-icon-type1-active: 'ico-cti-type1-active.png';
+$--cti-icon-type2: 'ico-cti-type2-default.png';
+$--cti-icon-type2-active: 'ico-cti-type2-active.png';
+$--cti-icon-type3: 'ico-cti-type3-default.png';
+$--cti-icon-type3-active: 'ico-cti-type3-active.png';
+$--cti-icon-type4: 'ico-cti-type4-default.png';
+$--cti-icon-type4-active: 'ico-cti-type4-active.png';
+$--cti-icon-type5: 'ico-cti-type5-default.png';
+$--cti-icon-type5-active: 'ico-cti-type5-active.png';
+$--cti-icon-type6: 'ico-cti-type6-default.png';
+$--cti-icon-type6-active: 'ico-cti-type6-active.png';
+// * local assets url setting
+// $--icons-image-url: '../images/icons/';
+// $--common-image-url: '../images/common/';
+// $--fonts-url: '../fonts/';
+// * server assets url setting
+$--icons-image-url: '/assets/images/icons/';
+$--common-image-url: '/assets/images/common/';
+$--fonts-url: '/assets/fonts/';
+// important
+$imp: unquote('!important');
+// font size
+$font-size-base: 0.875rem;
+$font-size-xxs: 0.625rem;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.8125rem;
+$font-size-lg: 1rem;
+$font-size-xl: 1.125rem;
+// title font-size
+$h1-title: 2.375rem;
+$h2-title: 1.875rem;
+$h3-title: 1.625rem;
+$h4-title: 1.375rem;
+$h5-title: 1.125rem;
+$h6-title: 1rem;
+// font-size sample
+/*
+8px = 0.5rem
+9px = 0.5625rem
+10px = 0.625rem
+11px = 0.6875rem
+12px = 0.75rem
+13px = 0.8125rem
+14px = 0.875rem
+15px = 0.9375rem
+16px = 1rem (base)
+17px = 1.0625rem
+18px = 1.125rem
+19px = 1.1875rem
+20px = 1.25rem
+21px = 1.3125rem
+22px = 1.375rem
+24px = 1.5rem
+25px = 1.5625rem
+26px = 1.625rem
+28px = 1.75rem
+30px = 1.875rem
+32px = 2rem
+34px = 2.125rem
+36px = 2.25rem
+38px = 2.375rem
+40px = 2.5rem
+*/
+// font weight
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
+$font-weight-black: 900;
+// size setting
+$--xs: 24px;
+$--sm: 32px;
+$--md: 38px;
+$--lg: 50px;
+// import components scss files
+@import 'basic-theme', 'modules', 'fonts', 'common', 'icons', 'form', 'table', 'components', 'buttons', 'modal',
+'layout', 'documents', 'contents', 'vendor';

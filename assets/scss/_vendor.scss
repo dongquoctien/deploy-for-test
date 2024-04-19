@@ -1,0 +1,170 @@
+@charset "UTF-8";
+// Kendo Grid 셋팅
+.k-grid {
+  border: {
+    top: 1px solid $--form-border2;
+    right: 0 none;
+    bottom: 1px solid $--form-border2;
+    left: 0 none;
+  }
+  table {
+    min-width: 100% !important;
+  }
+  thead,
+  tfoot {
+    background: $--form-header-bg;
+  }
+  th {
+    padding: 6px 10px;
+    color: $--dark;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-sm;
+  }
+  td {
+    padding: 6px 10px;
+    color: $--dark;
+    vertical-align: middle;
+    font-weight: $font-weight-light;
+    font-size: $font-size-xs;
+  }
+  tr.k-alt {
+    background-color: $--form-table-odd-bg;
+  }
+  .k-grid-label {
+    display: inline-flex;
+    align-items: center;
+    flex: none;
+    height: 20px;
+    padding: 0 4px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-weight: $font-weight-regular;
+    &.type1 {
+      color: $--dark-color1;
+      background: {
+        color: $--light-color2;
+      }
+    }
+  }
+  tbody {
+    tr {
+      &.k-state-hover,
+      &:hover {
+        background-color: #f7f7f7;
+      }
+    }
+  }
+}
+.k-grid-header {
+  padding: 0 !important;
+  .k-header > .k-link {
+    margin: -12px -10px;
+    padding: 12px 6px;
+  }
+}
+.k-grid-content {
+  overflow-y: auto;
+}
+.k-pager-wrap {
+  background: $--form-header-bg;
+  color: $--dark;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-sm;
+}
+.k-filtercell {
+  .k-filtercell-operator {
+    width: 28px;
+  }
+  .k-filtercell-wrapper > .k-textbox {
+    height: 30px;
+    padding: 0 10px;
+    color: $--form-text;
+    font-size: $--form-font-size-sm;
+    &:-moz-read-only {
+      cursor: default;
+    }
+    &:read-only {
+      cursor: default;
+    }
+    &:focus {
+      border-color: $--primary;
+    }
+    &:disabled {
+      background: $--form-disabled-bg;
+      color: $--form-disabled-text;
+      cursor: not-allowed;
+    }
+  }
+}
+.k-textbox,
+.k-textarea,
+.k-input.k-textbox {
+  border: 1px solid $--form-border;
+  background: $--form-bg;
+  border-radius: $--common-radius;
+}
+kendo-popup {
+  .k-popup {
+    border: 1px solid $--form-border $imp;
+    background: $--light;
+    border-radius: $--common-radius $imp;
+  }
+  .k-list-scroller {
+    @include scroll-type1;
+  }
+  kendo-list {
+    border: 0 none $imp;
+    .k-item {
+      font-size: $--form-font-size-sm;
+      &:hover {
+        background: $--form-table-hover-bg $imp;
+      }
+      &.k-state-focused,
+      &.k-state-selected {
+        border: 0 none $imp;
+        background: $--form-table-hover-bg $imp;
+        color: $--dark $imp;
+        box-shadow: none $imp;
+      }
+    }
+  }
+}
+// Kendo Loading
+.k-loading-mask {
+  .k-loading-image {
+    &:before {
+      width: 40px;
+      height: 40px;
+      margin: -20px 0 0 -20px;
+      -webkit-animation: linear loading-rotate 0.6s infinite;
+      animation: linear loading-rotate 0.6s infinite;
+      border: {
+        width: 6px;
+        top-color: var(--primary);
+        right-color: $--light-color2;
+        bottom-color: $--light-color2;
+        left-color: $--light-color2;
+        radius: 50%;
+        style: solid;
+      }
+    }
+    &:after {
+      content: none;
+    }
+  }
+}
+// Kendo Editor
+app-editor {
+  &.valid-error {
+    display: block;
+    overflow: hidden;
+    border: 1px solid $--form-valid;
+    border-radius: $--common-radius;
+  }
+}
+// 에디터모듈중 테이블 생성 팝업
+.k-ct-popup {
+  display: block;
+}

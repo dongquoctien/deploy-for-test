@@ -1,0 +1,412 @@
+@charset "UTF-8";
+.table {
+  > table {
+    min-width: 100%;
+    > thead {
+      > tr {
+        > th {
+          height: 30px;
+          padding: 5px 10px;
+          color: $--dark;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: $font-weight-medium;
+          font-size: $font-size-sm;
+          // white-space: nowrap;
+        }
+      }
+    }
+    > tbody {
+      > tr {
+        &.division-line {
+          &:not(:first-of-type) {
+            > * {
+              border-top: 1px solid $--form-border2 $imp;
+            }
+          }
+        }
+        > th {
+          padding: 5px 10px;
+          color: $--dark;
+          text-align: left;
+          vertical-align: middle;
+          white-space: nowrap;
+          font-weight: $font-weight-medium;
+          font-size: $font-size-sm;
+          &.th-bg {
+            background: $--form-header-bg;
+          }
+        }
+        > td {
+          height: 30px;
+          padding: 5px 10px;
+          text-align: left;
+          vertical-align: middle;
+          white-space: nowrap;
+          font-weight: $font-weight-regular;
+          font-size: $font-size-xs;
+          &.td-bg {
+            background: $--form-header-bg;
+          }
+          // html 편집기 들어가는 부분에 넣음
+          // &.td-editor {
+          //   padding: 0;
+          // }
+        }
+      }
+    }
+    tr {
+      &.align-c {
+        th, td {
+          text-align: center;
+        }
+      }
+    }
+    > tfoot {
+      > tr {
+        > td {
+          height: 42px;
+          padding: 5px 10px;
+          background: $--form-header-bg;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: $font-weight-regular;
+          font-size: $font-size-sm;
+        }
+      }
+    }
+  }
+  &.table-fixed {
+    > table {
+      width: 100%;
+      table-layout: fixed;
+      > tbody {
+        > tr {
+          > th,
+          > td {
+            white-space: normal;
+            word-break: break-all;
+          }
+        }
+      }
+    }
+  }
+  &.table-ellipsis {
+    > table {
+      width: 100%;
+      table-layout: fixed;
+      > tbody {
+        > tr {
+          > th,
+          > td {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+  &.table-responsive {
+    @include scroll-type2;
+    display: block;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    > table {
+      table-layout: fixed;
+      width: max-content;
+      > thead {
+        > tr {
+          > th {
+            white-space: nowrap;
+          }
+        }
+      }
+      > tbody {
+        > tr {
+          > th,
+          > td {
+            white-space: nowrap;
+          }
+          > td {
+            &.break {
+              white-space: normal;
+            }
+            &.word-break {
+              word-break: break-all;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.table-responsive-all {
+    @include scroll-type2;
+    display: block;
+    overflow: auto;
+    width: 100%;
+    > table {
+      width: max-content;
+      > tbody {
+        > tr {
+          > th,
+          > td {
+            &.break {
+              white-space: normal;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.table-line {
+    > table {
+      > tbody {
+        > tr {
+          &:not(:first-child) {
+            > th,
+            > td {
+              border-top: 1px solid $--form-border;
+            }
+          }
+        }
+      }
+      > thead + tbody {
+        > tr {
+          > th,
+          > td {
+            border-top: 1px solid $--form-border;
+          }
+        }
+      }
+      > tfoot {
+        > tr {
+          > th,
+          > td {
+            border-top: 1px solid $--form-border;
+          }
+        }
+      }
+    }
+  }
+  &.table-bordered {
+    border-top: 1px solid $--form-border2;
+    border-bottom: 1px solid $--form-border2;
+    > table {
+      > thead {
+        > tr {
+          > th {
+            border: 1px solid $--form-border;
+            background: $--form-header-bg;
+            border-width: 0 1px 1px 1px;
+            &:first-child {
+              border-width: 0 1px 1px 0;
+            }
+            &:last-child {
+              border-width: 0 0 1px 1px;
+            }
+            &:only-child {
+              border-width: 0 0 1px 0;
+            }
+          }
+          + tr {
+            th {
+              border-top: 1px solid $--form-border $imp;
+            }
+          }
+        }
+      }
+      > tbody {
+        > tr:not(:first-child) {
+          > th,
+          > td {
+            border: 1px solid $--form-border;
+            border-width: 1px 1px 0;
+            &:first-child {
+              border-width: 1px 1px 0 0 $imp;
+            }
+            &:last-child {
+              border-width: 1px 0 0 1px $imp;
+            }
+            &:only-child {
+              border-width: 1px 0 0 0 $imp;
+            }
+          }
+        }
+        > tr:first-child {
+          > th,
+          > td {
+            border: 1px solid $--form-border;
+            border-width: 0 1px;
+            &:first-child {
+              border-width: 1px 1px 0 0 $imp;
+            }
+            &:last-child {
+              border-width: 1px 0 0 1px $imp;
+            }
+            &:only-child {
+              border-width: 0 $imp;
+            }
+          }
+        }
+        > tr {
+          > th,
+          > td {
+            &.border {
+              &-top-none {
+                border-top: 0 none $imp;
+              }
+              &-left-none {
+                border-left: 0 none $imp;
+              }
+              &-right-none {
+                border-right: 0 none $imp;
+              }
+              &-bottom-none {
+                border-bottom: 0 none $imp;
+              }
+              &-none {
+                border: 0 none $imp;
+              }
+            }
+          }
+        }
+        + tbody {
+          > tr:first-child {
+            > th,
+            > td {
+              border: 1px solid $--form-border;
+              border-width: 2px 1px 0 1px;
+              &:first-child {
+                border-width: 2px 1px 0 0 $imp;
+              }
+              &:last-child {
+                border-width: 2px 0 0 1px $imp;
+              }
+              &:only-child {
+                border-width: 0 $imp;
+              }
+            }
+          }
+        }
+      }
+      > tfoot {
+        > tr {
+          > th,
+          > td {
+            border: 1px solid $--form-border;
+            border-width: 1px 1px 0;
+            &:first-child {
+              border-width: 1px 1px 0 0 $imp;
+            }
+            &:last-child {
+              border-width: 1px 0 0 1px $imp;
+            }
+            &:only-child {
+              border-width: 1px 0 0 0 $imp;
+            }
+          }
+        }
+      }
+      > thead + tbody {
+        > tr {
+          > th,
+          > td {
+            border: 1px solid $--form-border;
+            border-width: 1px 1px 0 $imp;
+          }
+        }
+      }
+    }
+    &.in-border-none {
+      > table {
+        > thead,
+        > tbody,
+        > tfoot {
+          > tr {
+            > th,
+            > td {
+              border: 0 $imp;
+            }
+          }
+        }
+      }
+    }
+    &.last-line {
+      > table {
+        > tbody {
+          > tr {
+            &:last-child,
+            &:only-child {
+              th,
+              td {
+                border-bottom: 1px solid $--form-border $imp;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.table-pattern-odd {
+    > table {
+      > tbody {
+        > tr:nth-child(odd) {
+          background: $--form-table-odd-bg;
+        }
+      }
+    }
+  }
+  &.table-pattern-even {
+    > table {
+      > tbody {
+        > tr:nth-child(even) {
+          background: $--form-table-odd-bg;
+        }
+      }
+    }
+  }
+  &.table-hover {
+    > table {
+      > tbody {
+        > tr {
+          &.selected,
+          &:hover {
+            background: $--form-table-hover-bg;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  &.table-max-heigh-70 {
+    max-height: 70vh;
+  }
+  &.table-max-height-60 {
+    max-height: 60vh;
+  }
+  &.table-max-height-50 {
+    max-height: 50vh;
+  }
+  &.table-min-width-500 {
+    > table {
+      > tbody {
+        > tr {
+          > td {
+            min-width: 500px;
+          }
+        }
+      }
+    }
+  }
+  .standby {
+    td {
+      color: $--danger;
+    }
+  }
+}
+// editor reset
+table.k-editor {
+  border: 0 $imp;
+}

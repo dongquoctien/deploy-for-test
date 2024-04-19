@@ -1,0 +1,67 @@
+@charset "UTF-8";
+.icon {
+  display: inline-block;
+  text-indent: -9999em;
+  &.sm {
+    width: 20px;
+    height: 20px;
+    &.arrow {
+      &-left {
+        background: url($--icons-image-url + $--arrow-left-icon) 50% 50% no-repeat;
+        background-size: auto 16px;
+      }
+      &-right {
+        background: url($--icons-image-url + $--arrow-right-icon) 50% 50% no-repeat;
+        background-size: auto 16px;
+      }
+    }
+    &.file {
+      width: 16px;
+      height: 16px;
+      background: url($--icons-image-url + $--file-icon) 50% 50% no-repeat;
+      background-size: auto 16px;
+    }
+    &.page {
+      &-prev {
+        background: url($--common-image-url + $--common-page-prev-icon) 50% 50% no-repeat;
+        background-size: auto 16px;
+      }
+      &-next {
+        background: url($--common-image-url + $--common-page-next-icon) 50% 50% no-repeat;
+        background-size: auto 16px;
+      }
+    }
+  }
+  &.xs {
+    width: 12px;
+    height: 12px;
+    &.plus {
+      background: url($--icons-image-url + $--count-up-icon) 50% 50% no-repeat;
+      background-size: 12px auto;
+    }
+    &.minus {
+      background: url($--icons-image-url + $--count-down-icon) 50% 50% no-repeat;
+      background-size: 12px auto;
+    }
+  }
+  &.common {
+    &.page-size {
+      width: 20px;
+      height: 20px;
+      &.extend {
+        background: url($--common-image-url + $--common-page-extend-icon) 50% 50% no-repeat;
+        background-size: 12px auto;
+      }
+      &.reduce {
+        background: url($--common-image-url + $--common-page-reduce-icon) 50% 50% no-repeat;
+        background-size: 16px auto;
+      }
+    }
+    &.close {
+      width: 20px;
+      height: 20px;
+      background: url($--common-image-url + $--common-modal-close2) 50% 50% no-repeat;
+      background-size: 22px auto;
+    }
+  }
+}

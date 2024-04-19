@@ -1,0 +1,343 @@
+@charset "UTF-8";
+.modal {
+  display: none;
+  &:not(.relative) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    &:before {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10001;
+      background: rgba($--dark, .35);
+      content: "";
+    }
+  }
+  &.active {
+    display: block;
+  }
+  &.no-bg {
+    &:before {
+      content: none;
+    }
+  }
+  .btn-modal-close {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    text-indent: -9999em;
+  }
+  .modal-search-area {
+    padding: 10px;
+    border: 1px solid $--form-border;
+    background: $--form-header-bg;
+    border-radius: $--common-radius;
+    .input + .btn {
+      margin-left: 10px;
+    }
+  }
+  .pd-all {
+    padding: 20px $imp;
+  }
+  .mg-all {
+    margin: 20px $imp;
+  }
+  &.mini,
+  &.wide,
+  &.side {
+    .btn-modal-close {
+      background: url($--common-image-url + $--common-modal-close) 50% 50% no-repeat;
+    }
+    .modal-inner {
+      position: absolute;
+      z-index: 10002;
+    }
+    .modal-title {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-medium;
+      margin-bottom: 5px;
+    }
+    .modal-contents {
+      line-height: 160%;
+      font-size: $font-size-base;
+    }
+    .modal-button-group {
+      display: flex;
+      margin-top: 10px;
+      justify-content: flex-end;
+      .btn {
+        display: inline-flex;
+        font-weight: $font-weight-medium;
+        + .btn {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  &.mini {
+    z-index: 11010;
+    .btn-modal-close {
+      top: 15px;
+      right: 15px;
+    }
+    .modal-inner {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .modal-body {
+      min-width: 500px;
+      padding: 20px;
+      background: $--light;
+      border-radius: $--common-radius;
+      box-shadow: 0 3px 10px rgba($--dark, .16);
+    }
+    .modal-title {
+      color: $--dark;
+    }
+    .modal-contents {
+      min-height: 120px;
+      color: $--dark-color3;
+    }
+  }
+  &.wide {
+    .btn-modal-close {
+      top: 15px;
+      right: 15px;
+    }
+    .modal-inner {
+      top: 50%;
+      right: 0;
+      left: 0;
+      transform: translateY(-50%);
+    }
+    .modal-body {
+      padding: 20px;
+      background: rgba($--dark, .8);
+    }
+    .modal-title {
+      color: $--light;
+    }
+    .modal-contents {
+      color: $--light;
+    }
+  }
+  &.side {
+    .btn-modal-close {
+      display: none;
+    }
+    .modal-inner {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 500px;
+    }
+    .modal-body {
+      height: 100vh;
+      max-height: 100vh;
+      padding: 30px 40px;
+      background: $--light;
+      overflow-y: auto;
+    }
+    .modal-contents {
+      min-height: calc(100vh - 140px);
+    }
+  }
+  &.page {
+    justify-content: center;
+    align-items: center;
+    &.active {
+      display: flex;
+    }
+    .modal-inner-contents {
+      padding: 20px;
+    }
+    .modal-inner {
+      z-index: 10002;
+      background: $--light;
+      &.xs {
+        width: 400px;
+        min-width: 400px;
+      }
+      &.sm {
+        width: 800px;
+        min-width: 800px;
+      }
+      &.md {
+        width: 1280px;
+        min-width: 1280px;
+      }
+      &.lg {
+        width: 1480px;
+        min-width: 1480px;
+      }
+      &.cs {
+        width: 1480px;
+        min-width: 1480px;
+        min-height: 800.05px;
+      }
+      &.xl {
+        width: 1620px;
+        min-width: 1620px;
+      }
+      &.w100 {
+        width: 100%;
+      }
+      &.full {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: auto;
+        .body-scroll {
+          max-height: calc(100vh - 44px);
+        }
+      }
+      &.fixed {
+        position: fixed;
+      }
+    }
+    .modal-header {
+      display: flex;
+      position: relative;
+      height: 44px;
+      padding: 0 46px 0 20px;
+      background: $--modal-title-bg;
+      align-items: center;
+      .btn-add-item {
+        width: 16px;
+        height: 16px;
+        background: url($--common-image-url + $--common-add-item) 50% 50% no-repeat;
+        font-size: 0;
+        background-size: 16px auto;
+        margin-right: 10px;
+      }
+      .btn-modal-close {
+        top: 50%;
+        right: 20px;
+        background: url($--common-image-url + $--common-modal-close2) 50% 50% no-repeat;
+        transform: translateY(-50%);
+        background-size: 23px auto;
+      }
+      .modal-title {
+        display: flex;
+        color: $--light;
+        align-items: center;
+        font-size: $--form-font-size-base;
+        strong + span {
+          margin-left: 30px;
+        }
+        a {
+          text-decoration: underline;
+        }
+      }
+      .page-control {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        .icon + .icon {
+          margin-left: 10px;
+        }
+      }
+      &.fixed {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 100;
+        + .modal-body {
+          margin-top: 44px;
+        }
+      }
+    }
+    .modal-body {
+      background: $--light;
+    }
+    .body-scroll {
+      @include scroll-type2;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    .contents-scroll {
+      @include scroll-type2;
+      max-height: 65vh $imp;
+      overflow-y: auto;
+    }
+    .tabs-content {
+      &:not(.no-scroll) {
+        @include scroll-type2;
+        max-height: calc(90vh - 97px);
+        overflow-y: auto;
+      }
+    }
+    // 예약상세 모달을 띄울때
+    &.reservation-modal {
+      // app-reservation-header {
+      //   > .modal-header {
+      //     position: fixed;
+      //     top: 0;
+      //     right: 0;
+      //     left: 0;
+      //   }
+      // }
+      // 로컬용
+      // .modal-inner {
+      //   > .modal-header {
+      //     position: fixed;
+      //     top: 0;
+      //     left: 0;
+      //     right: 0;
+      //   }
+      // }
+      .modal-body {
+        > .frame-wrap {
+          min-width: 1480px;
+          height: calc(100vh - 44px);
+          .tabs-content {
+            max-height: calc(100vh - 86px);
+          }
+        }
+      }
+    }
+  }
+  &.maximum-size {
+    .modal-inner {
+      width: 100% $imp;
+      height: 100% $imp;
+    }
+    &.page {
+      .modal-body {
+        @include scroll-type2;
+        min-height: calc(100vh - 44px);
+        max-height: calc(100vh - 44px);
+        overflow-y: auto;
+      }
+      .body-scroll,
+      .contents-scroll,
+      .tabs-content {
+        max-height: none $imp;
+        overflow-y: inherit $imp;
+      }
+    }
+    .frame-wrap.promotion > .frame {
+      min-height: calc(100vh - 44px);
+      max-height: calc(100vh - 44px);
+    }
+  }
+}
+.cdk-overlay-container {
+  position: fixed !important;
+  z-index: 1000 !important;
+}
+.cdk-overlay-container:empty {
+  display: block !important;
+}

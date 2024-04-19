@@ -1,0 +1,98 @@
+@charset "UTF-8";
+// Mixin Tool
+@mixin clearfix {
+  &:after {
+    display: table;
+    content: "";
+    table-layout: fixed;
+    clear: both;
+  }
+}
+@mixin text-over {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@mixin overflow-y {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+@mixin overflow-x {
+  overflow-y: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin scroll-type1 {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: var(--body-scroll-bg);
+  }
+  &::-webkit-scrollbar-corner {
+    background-color: var(--body-scroll-bg);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--body-scroll-bg-thumb);
+  }
+}
+@mixin scroll-type2 {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: $--form-scroll-bg;
+  }
+  &::-webkit-scrollbar-corner {
+    background-color: $--form-scroll-bg;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $--form-scroll-bg-thumb;
+  }
+}
+@mixin fs-base {
+  font-size: 1rem;
+}
+@mixin fs-sm {
+  font-size: 1.083rem;
+}
+@mixin fs-md {
+  font-size: 1.166em;
+}
+@mixin fs-lg {
+  font-size: 1.5rem;
+}
+@mixin fs-xl {
+  font-size: 1.833rem;
+}
+@mixin fs-2xl {
+  font-size: 2.167rem;
+}
+@mixin fs-3xl {
+  font-size: 2.500rem;
+}
+@mixin fs-3xl {
+  font-size: 3.167rem;
+}
+// position function :: ex) @include center(true, false)
+@mixin center($horizontal: true, $vertical: true) {
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  position: absolute;
+}
